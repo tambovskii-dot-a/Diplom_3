@@ -1,3 +1,4 @@
+import com.codeborne.selenide.Selenide;
 import org.junit.Before;
 import org.junit.Test;
 import pages.BurgersMainPage;
@@ -13,12 +14,15 @@ public class BunsVisibilityTests extends BaseTest {
     public void makeTstData() {
         open(Constants.BASE_URL);
         mainPage.clickSouseTab();
+        // Добавил небольшой делей что бы GUI успел переместить элементы
+        Selenide.sleep(200);
     }
 
     @Test
     public void bunTitleVisibilityTest() {
 
         mainPage.clickBunsTab();
+
         assertTrue(mainPage.bunsTitleIsVisible());
 
     }
