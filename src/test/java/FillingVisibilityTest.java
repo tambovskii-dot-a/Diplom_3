@@ -12,12 +12,12 @@ public class FillingVisibilityTest extends BaseTest{
     @Before
     public void makeTstData() {
         open(Constants.BASE_URL);
-        mainPage.clickSouseTab();
-        mainPage.clickFillingTab();
     }
 
     @Test
     public void fillingTitleVisibilityTest() {
+        mainPage.clickFillingTab();
+        mainPage.fillingTabIsFocused();
         assertTrue(mainPage.fillingTitleIsVisible());
 
     }

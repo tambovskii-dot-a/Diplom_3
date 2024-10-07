@@ -19,14 +19,23 @@ public class BurgersMainPage {
     @FindBy(how = How.CLASS_NAME, using = "BurgerIngredients_ingredients__1N8v2")
     private SelenideElement burgerConstructor;
     // Buns Tab
-    @FindBy(how = How.XPATH, using = "//span[contains(text(),'Булки')]/.")
+    @FindBy(how = How.XPATH, using = "//span[contains(text(),'Булки')]/..")
     private SelenideElement bunsTab;
+    //Buns Tab is focused
+    @FindBy(how = How.XPATH,using = "//div[contains(@class, 'tab_tab_type_current__2BEPc')]/span[text()='Булки']")
+    private SelenideElement bunsTabIsFocused;
     // Souse Tab
-    @FindBy(how = How.XPATH, using = "//span[contains(text(),'Соусы')]/.")
+    @FindBy(how = How.XPATH, using = "//span[contains(text(),'Соусы')]/..")
     private SelenideElement souseTab;
+    //Souse Tab is focused
+    @FindBy(how = How.XPATH,using = "//div[contains(@class, 'tab_tab_type_current__2BEPc')]/span[text()='Соусы']")
+    private SelenideElement souseTabIsFocused;
     // Filling Tab
-    @FindBy(how = How.XPATH, using = "//span[contains(text(),'Начинки')]/.")
+    @FindBy(how = How.XPATH, using = "//span[contains(text(),'Начинки')]/..")
     private SelenideElement fillingTab;
+    //Filling Tab is focused
+    @FindBy(how = How.XPATH,using = "//div[contains(@class, 'tab_tab_type_current__2BEPc')]/span[text()='Начинки']")
+    private SelenideElement fillingTabIsFocused;
     //Buns title
     @FindBy(how = How.XPATH, using = "//h2[contains(text(),'Булки')]")
     private SelenideElement bunsTitle;
@@ -58,20 +67,32 @@ public class BurgersMainPage {
 
     @Step("click buns tab")
     public void clickBunsTab() {
-        bunsTab.shouldBe(Condition.exist);
         bunsTab.click();
+    }
+
+    @Step("Check buns tab is focused")
+    public void bunTabIsFocused() {
+        bunsTabIsFocused.shouldBe(Condition.visible);
     }
 
     @Step("click souse tab")
     public void clickSouseTab() {
-        souseTab.shouldBe(Condition.exist);
         souseTab.click();
+    }
+
+    @Step("Check souse tab is focused")
+    public void souseTabIsFocused() {
+        souseTabIsFocused.shouldBe(Condition.visible);
     }
 
     @Step("click filling tab")
     public void clickFillingTab() {
-        fillingTab.shouldBe(Condition.exist);
         fillingTab.click();
+    }
+
+    @Step("Check filling tab is focused")
+    public void fillingTabIsFocused() {
+        fillingTabIsFocused.shouldBe(Condition.visible);
     }
 
     @Step("Check visible title ingredients")

@@ -14,15 +14,15 @@ public class BunsVisibilityTests extends BaseTest {
     public void makeTstData() {
         open(Constants.BASE_URL);
         mainPage.clickSouseTab();
-        // Добавил небольшой делей что бы GUI успел переместить элементы
-        Selenide.sleep(200);
+        mainPage.souseTabIsFocused();
+
     }
 
     @Test
     public void bunTitleVisibilityTest() {
 
         mainPage.clickBunsTab();
-
+        mainPage.bunTabIsFocused();
         assertTrue(mainPage.bunsTitleIsVisible());
 
     }

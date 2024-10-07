@@ -14,6 +14,7 @@ public class SouseVisibilityTest extends BaseTest{
     @Test
     public void souseTitleVisibilityTest(){
         mainPage.clickSouseTab();
+        mainPage.souseTabIsFocused();
         assertTrue(mainPage.souseTitleIsVisible());
 
     }
